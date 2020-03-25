@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+class treugolnic {
+public:
+	int a;
+	int b;
+	int c;
+	int P;
+	double S;
+	double perimeter()
+	{
+		return a + b + c;
+	};
+	double square()
+	{
+		double p1;
+		p1 = perimeter();
+		return sqrt(p1/2*(p1 / 2 - a)* (p1 / 2 - b)* (p1 / 2 - c));
+	}
+	void print()
+	{
+		cout << "perimetr = " << P << " square = " << S << endl;
+	}
+};
+
+int main()
+{
+	treugolnic A1;
+	treugolnic B2;
+
+	cout << "vvedite storoni treugolnica A1:" << endl;
+	cin >> A1.a >> A1.b >> A1.c;
+	cout << "perimetr i square A1: " << endl;
+	A1.P = A1.perimeter();
+	A1.S = A1.square();
+	A1.print();
+
+	return 0;
+}
